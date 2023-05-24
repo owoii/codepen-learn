@@ -2,14 +2,15 @@
   <div class="sidebar-container">
     <!-- TODO 头像的地址路径应该是存在全局状态内,或者是静态的?... -->
     <div class="avatar-container">
-      <n-avatar size="large" src="/public/avatar/me-200.png" class="avatar" />
+      <n-avatar size="large" src="/avatar/me-200.png" class="avatar" />
       <h2>小吉君</h2>
     </div>
-    <n-menu :options="menuOptions" />
+    <n-menu :options="menuOptions"> </n-menu>
   </div>
 </template>
 <script setup lang="ts">
 import menuOptions from "@/config/menuoption";
+
 </script>
 <style lang="scss" scoped>
 .sidebar-container {
@@ -19,9 +20,12 @@ import menuOptions from "@/config/menuoption";
   border-right: 1px solid #d6d6d6;
 }
 .avatar-container {
+  box-sizing: border-box;
+  padding: 0 10px;
   display: flex;
   gap: 15px;
-  align-items: center; 
+  align-items: center;
+  margin-bottom: 20px;
   & > .avatar {
     border: 1px solid #d6d6d6;
     box-shadow: 0 0 5px rgba($color: #b5ffd1, $alpha: 0.1);

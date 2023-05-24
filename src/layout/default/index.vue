@@ -2,10 +2,12 @@
   <div class="layout-container">
     <div class="m-layout">
       <n-layout has-sider style="height: 100%">
-        <n-layout-sider>
+        <n-layout-sider width="300">
           <SideBar />
         </n-layout-sider>
-        <router-view></router-view>
+        <n-layout>
+          <router-view to="/home" />
+        </n-layout>
       </n-layout>
     </div>
   </div>

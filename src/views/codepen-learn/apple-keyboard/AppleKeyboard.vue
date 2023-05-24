@@ -4,7 +4,7 @@
     <div class="keyboard">
       <div class="key-row">
         <button class="key-one" v-for="(item, index) in keys" :key="index">
-          <span>{{ item?.text || "N" }}</span>
+          <span>{{ item.text || "no" }}</span>
         </button>
       </div>
     </div>
@@ -13,11 +13,6 @@
 <script setup lang="ts">
 import keylist from "./keylist";
 const keys = reactive(keylist);
-onMounted(() => {
-  addEventListener("keydown", () => {
-    console.log(123);
-  });
-});
 </script>
 <style lang="scss" scoped>
 .keyboard-container {
@@ -100,7 +95,7 @@ onMounted(() => {
 @media (prefers-color-scheme: dark) {
   .key-one {
     background: hsl(0%, 0%, 5%);
-    span{
+    span {
       color: #fff;
     }
   }
