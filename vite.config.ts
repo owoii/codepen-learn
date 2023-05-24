@@ -25,9 +25,10 @@ export default defineConfig({
       resolvers: [NaiveUiResolver()],
     }),
   ],
-  resolve:{
-    alias:{
+  resolve: {
+    alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
-    }
-  }
+      "/": fileURLToPath(new URL("./public", import.meta.url)),
+    },
+  },
 });
