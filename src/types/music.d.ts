@@ -41,7 +41,26 @@ declare namespace MusicService {
     url: string;
   }
 
+  interface Node<T> {
+    data?: T;
+    next?: Node<T>;
+    prev?: Node<T>;
+  }
+
+  interface MusicController {
+    url: string;
+    player: HTMLAudioElement;
+    playList: Song[];
+    play: () => void;
+    currentIndex: number;
+    currentMusic?: Song;
+    playNext: () => void;
+    playPrev: () => void;
+    playStatus: boolean;
+  }
+
   type SuggestResult = PromiseResult<Suggest>;
   type SearchSongResult = PromiseResult<SearchSong>;
   type MusicURLRequest = PromiseResult<MusicURL[]>;
+  type SongNode = Node<Song>;
 }

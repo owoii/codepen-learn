@@ -2,7 +2,7 @@ import type { MenuOption } from "naive-ui";
 import { RouterLink } from "vue-router";
 const menuOptions: MenuOption[] = [
   {
-    label: () => h(RouterLink, { to: "/home" }, { default: () => "哈哈" }),
+    label: () => h(RouterLink, { to: "/home" }, { default: () => "操作录制" }),
     key: "114514",
   },
   {
@@ -48,7 +48,7 @@ const menuOptions: MenuOption[] = [
           h(
             RouterLink,
             { to: "/app/lyrics-scroll" },
-            { default: () => "歌词滚动" }
+            { default: () => "音乐播放器" }
           ),
         key: "dsdsad",
       },
