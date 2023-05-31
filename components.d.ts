@@ -11,11 +11,13 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     NAvatar: typeof import('naive-ui')['NAvatar']
     NButton: typeof import('naive-ui')['NButton']
+    NDataTable: typeof import('naive-ui')['NDataTable']
     NInput: typeof import('naive-ui')['NInput']
     NLayout: typeof import('naive-ui')['NLayout']
     NLayoutSider: typeof import('naive-ui')['NLayoutSider']
     NMenu: typeof import('naive-ui')['NMenu']
     NotFoundComponent: typeof import('./src/components/NotFoundComponent.vue')['default']
+    NSelect: typeof import('naive-ui')['NSelect']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

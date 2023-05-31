@@ -1,9 +1,11 @@
 <template>
-  <div class="app-container">
-    <h1>赛博算命</h1>
-    <n-input placeholder="输入你的生辰八字" show-count :maxlength="12" />
-    <n-button @click="getResult">开始赛博算命</n-button>
-    <h1>{{ result.data }}</h1>
+  <div class="app-container flex-center page-container">
+    <div class="cyber-container">
+      <h1>赛博算命</h1>
+      <n-input placeholder="输入你的生辰八字" show-count :maxlength="20" />
+      <n-button @click="getResult">开始赛博算命</n-button>
+      <h1>{{ result.data }}</h1>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -14,8 +16,6 @@ interface ResultType {
 
 const question = ref("甲午年 庚寅月 戊寅日 戊辰时");
 const result = ref<ResultType>({ data: "快点击按钮进行算命吧" });
-// const completion =
-// ,返回的数据格式为:{data:算命结果},:
 
 onMounted(() => {});
 
@@ -29,4 +29,15 @@ const getResult = async () => {
   result.value = res;
 };
 </script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.page-container {
+  height: 100%;
+}
+.cyber-container {
+  width: 40%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+</style>

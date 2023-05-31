@@ -1,0 +1,38 @@
+<template>
+  <div>
+    <audio :src="url" controls></audio>
+    <n-button @click="startMediaRecorder">开始录制</n-button>
+    <n-button @click="stopMediaRecorder">停止录制</n-button>
+  </div>
+</template>
+<script setup lang="ts">
+const url = ref("");
+let mediaRecorder: MediaRecorder | null = null;
+
+const getMediaRecorder = () => {
+  navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
+    mediaRecorder = new MediaRecorder(stream);
+    const chunks: Blob[] = [];
+    mediaRecorder.ondataavailable = (e) => {
+      chunks.push(e.data);
+    };
+
+    mediaRecorder.onstop = () => {
+      const blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
+      url.value = URL.createObjectURL(blob);
+      chunks.splice(0);
+    };
+  });
+};
+
+onMounted(() => {
+  getMediaRecorder();
+});
+const startMediaRecorder = () => {
+  mediaRecorder?.start();
+};
+const stopMediaRecorder = () => {
+  mediaRecorder?.stop();
+};
+</script>
+<style lang="scss" scoped></style>

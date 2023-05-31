@@ -1,3 +1,9 @@
+declare namespace MusicService {
+  interface Result<T> {
+    code: number;
+    result: T;
+  }
+}
 declare namespace OConfig {
   interface globalConfig {
     theme: string;
