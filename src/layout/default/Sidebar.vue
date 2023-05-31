@@ -3,14 +3,16 @@
     <!-- TODO 头像的地址路径应该是存在全局状态内,或者是静态的?... -->
     <div class="avatar-container">
       <n-avatar size="large" src="/avatar/me-200.png" class="avatar" />
-      <h2>小吉君</h2>
+      <div>
+        <h2>万事屋</h2>
+        <b>万事屋有什么都不奇怪吧!!</b>
+      </div>
     </div>
     <n-menu :options="menuOptions"> </n-menu>
   </div>
 </template>
 <script setup lang="ts">
 import menuOptions from "@/config/menuoption";
-
 </script>
 <style lang="scss" scoped>
 .sidebar-container {
