@@ -43,6 +43,15 @@ const menuOptions: MenuOption[] = [
           ),
         key: "rat",
       },
+      {
+        label: () =>
+          h(
+            RouterLink,
+            { to: "/app/lyrics-scroll" },
+            { default: () => "歌词滚动" }
+          ),
+        key: "dsdsad",
+      },
     ],
   },
 ];

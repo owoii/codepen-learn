@@ -23,7 +23,7 @@
       "@/*": ["src/*"],
       "/*": ["public/*"]
     },
-    "baseUrl": "."
+    "baseUrl": ".",
   },
   "include": [
     "src/**/*.ts",

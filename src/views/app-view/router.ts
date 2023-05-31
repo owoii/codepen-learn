@@ -10,5 +10,10 @@ export default {
           "@/views/app-view/cyber-fortune-telling/CyberFortuneTelling.vue"
         ),
     },
+    {
+      path: "lyrics-scroll",
+      component: () =>
+        import("@/views/app-view/lyrics-scroll/LyricsScroll.vue"),
+    },
   ],
 } as RouteRecordRaw;
