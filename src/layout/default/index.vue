@@ -2,9 +2,7 @@
   <div class="layout-container">
     <div class="m-layout">
       <n-layout has-sider style="height: 100%">
-        <n-layout-sider width="300">
-          <SideBar />
-        </n-layout-sider>
+        <SideBar />
         <n-layout>
           <router-view to="/home" />
         </n-layout>
@@ -13,7 +11,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import SideBar from "./Sidebar.vue";
+import SideBar from './Sidebar.vue';
 </script>
 <style lang="scss" scoped>
 // 布局的样式直接和组件绑定
