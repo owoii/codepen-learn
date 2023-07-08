@@ -16,7 +16,7 @@ const menuOptions: MenuOption[] = [
             { to: "/codepen/apple" },
             { default: () => "Apple keyboard" }
           ),
-        key: "rat",
+        key: "rasat",
       },
       {
         label: () =>

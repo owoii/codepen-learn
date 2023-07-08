@@ -1,18 +1,35 @@
 <template>
-  <div class="sidebar-container">
-    <!-- TODO 头像的地址路径应该是存在全局状态内,或者是静态的?... -->
-    <div class="avatar-container">
-      <n-avatar size="large" src="/avatar/me-200.png" class="avatar" />
-      <div>
-        <h2>万事屋</h2>
-        <b>万事屋有什么都不奇怪吧!!</b>
+  <n-layout-sider
+    width="300"
+    collapse-mode="width"
+    :collapsed-width="90"
+    show-trigger="arrow-circle"
+    @update:collapsed="demo"
+  >
+    <div class="sidebar-container">
+      <!-- 头像 -->
+      <div class="avatar-container">
+        <n-avatar size="large" :src="navigator?.avatar" class="avatar" />
+        <div>
+          <h2>{{ navigator?.title }}</h2>
+          <b>{{ navigator?.description }}</b>
+        </div>
       </div>
+      <!-- 导航 -->
+      <n-menu :options="menuOptions" />
     </div>
-    <n-menu :options="menuOptions"> </n-menu>
-  </div>
+  </n-layout-sider>
 </template>
 <script setup lang="ts">
-import menuOptions from "@/config/menuoption";
+// 侧边栏的数据应该使用约定好的数据格式
+import menuOptions from '@/config/menuoption';
+import { useGlobaConfigStore } from '@/store/config';
+const globaConfigStore = useGlobaConfigStore();
+
+const { navigator } = globaConfigStore;
+const demo = () => {
+  console.log(1234);
+};
 </script>
 <style lang="scss" scoped>
 .sidebar-container {

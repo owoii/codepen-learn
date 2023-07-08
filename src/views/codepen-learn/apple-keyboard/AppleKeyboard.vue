@@ -45,7 +45,7 @@ const keys = reactive(keylist);
   box-sizing: border-box;
   width: 6.4em;
   height: 6em;
-  background: hsl(0%, 0%, 95%);
+  background: hsl(0, 0%, 95%);
   border: none;
   border-radius: 10px;
   box-shadow: -0.4em -0.25em 0.4em hsla(0, 0%, 0%, 0.5),
@@ -94,7 +94,7 @@ const keys = reactive(keylist);
 }
 @media (prefers-color-scheme: dark) {
   .key-one {
-    background: hsl(0%, 0%, 5%);
+    background: hsl(0, 0%, 5%);
     span {
       color: #fff;
     }

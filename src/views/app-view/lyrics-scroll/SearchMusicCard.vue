@@ -131,7 +131,7 @@ async function searchMusicList() {
   height: 100%;
 }
 .search-input {
-  ::v-deep .n-input-wrapper {
+  :deep(.n-input-wrapper) {
     padding-right: 0;
   }
 }
